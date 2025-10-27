@@ -11,6 +11,7 @@ pipeline {
       }      
       steps {
           sh '''
+           pwd
            ls -la
            node --version 
            npm --version
@@ -21,5 +22,14 @@ pipeline {
           
       }
     }
+         stage('test'){
+             steps{
+                 echo 'test stage'
+                 sh '''
+                    pwd
+                    test -f build/index.html
+                 '''
+             }
+         }
     }
 }
