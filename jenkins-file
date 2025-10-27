@@ -11,7 +11,7 @@ pipeline {
       }      
       steps {
           sh '''
-
+           pwd
            pwd
            ls -la
            node --version 
